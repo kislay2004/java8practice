@@ -1,17 +1,40 @@
 # Java 8 Notes
 
 ### Lambda Expression
-How do we pass behaviour in java? 
--> create an interface -> pass an implementation to the interface -> the method implementing interface is the behaviour we try to pass 
-Even for passing anonymous implementation it requires, lots of boilerplate code.
-So, comes to rescue: Lambda expression -> removes boilerplate code - make the code more succinct.
+**How can we pass behaviour in java?** 
+
+create an interface -> pass an implementation to the interface -> the method implementing interface is the behaviour we try to pass 
+(could be an anonymous block of code.)
+
+Even for passing anonymous implementation it requires, lots of boilerplate code. 
+It still does not give an ability to store/assign as reference and pass the behaviour along.
+So, comes to rescue: **Lambda expression** , anonymous code block it may take argument and return some result. 
+Also, it removes boilerplate code - make the code more succinct.
+
+##### Syntax of lambda expression
+
+`(  arguments ) -> { block of code}`
+
+
+##### Some examples of Lambda Expression
+
+- No argument, returns nothing       :   `() -> System.out.println("Hi!!")`
+- Takes two argument, returns sum    :   `(x, y) -> x+y`
+- Multi-line bloack, Takes two argument, returns an int :  
+ `(x, y) -> { int sum = x+y;
+                int squareOfSum = sum*sum ; 
+                return sum 
+             } ;`
+             
+- Empty lambda block:` {} -> {}   `
+ 
 
 ### Functional Interface
 - Interface with, exactly one method --> a lambda expression can passed instead of interface implementation.
 - Java8 provides many in-built functional interface.
    `@FunctionalInterface`
 
-- Some built-in functional interfaces defined in `java.util.functon` package.
+- Some built-in functional interfaces defined in `java.util.function` package.
 Example:
     - Function  : apply
     - BiFunction : apply(firstArg, secondArg))

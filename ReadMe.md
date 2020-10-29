@@ -20,13 +20,13 @@ Also, it removes boilerplate code - make the code more succinct.
 
 - No argument, returns nothing       :   `() -> System.out.println("Hi!!")`
 - Takes two argument, returns sum    :   `(x, y) -> x+y`
-- Multi-line bloack, Takes two argument, returns an int :  
- `(x, y) -> { int sum = x+y;
-                int squareOfSum = sum*sum ; 
-                return sum 
-             } ;`
+- Multi-line block, Takes two argument, returns an int :  
+ `(x, y) -> { int sum = x+y;  
+                int squareOfSum = sum*sum ;           
+                return sum ;  
+             } ;` 
              
-- Empty lambda block:` {} -> {}   `
+- Empty lambda block:` {} -> {} `
  
 
 ### Functional Interface
@@ -56,6 +56,21 @@ Example:
 ### Composing Lambda:
   - helper static methods to be called on each of the argument.
     ArrayList.sort( books, Comparator.comparing(book -> book.getTitle()))
+
+### Default Method
+The main purpose of default method is to introduce new functionality or behaviours without breaking the existing ones.
+So, to keep the new changes in the interfaces backward compatible.
+This particularly helped to grow and improve Collections framework of java.(Imagine the plight and cost of migration to java 8!)
+Two important updates here:
+1) Default methods
+2) Static methods
+
+Important to note:
+- Interface still differ in the purpose from Abstract classes. Abstract class is for introducing partial abstraction, 
+whereas interface is for introducing complete abstraction. 
+
+- In addition, if the code get into issues related with 'Diamond problem' (more than one interface with methods with same signature) - 
+compiler issues a compiler error. To solve this problem, we can provide an overridden implementation.  
 
 ##### Read more:
 
